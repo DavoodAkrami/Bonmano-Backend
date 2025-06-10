@@ -1,11 +1,9 @@
 services:
   - type: web
     name: rubikamp-strapi
-    env: docker
-    dockerfilePath: ./Dockerfile
-    plan: free
-    healthCheckPath: /_health
-    autoDeploy: true
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
     envVars:
       - key: NODE_ENV
         value: production
