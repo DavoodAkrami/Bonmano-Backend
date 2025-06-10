@@ -5,7 +5,10 @@ services:
     dockerfilePath: ./Dockerfile
     plan: free
     healthCheckPath: /_health
+    autoDeploy: true
     envVars:
+      - key: NODE_ENV
+        value: production
       - key: DATABASE_CLIENT
         value: postgres
       - key: DATABASE_HOST
@@ -28,8 +31,12 @@ services:
         fromDatabase:
           name: rubikamp-db
           property: password
-      - key: NODE_ENV
-        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ADMIN_JWT_SECRET
+        generateValue: true
+      - key: API_TOKEN_SALT
+        generateValue: true
 
 databases:
   - name: rubikamp-db
