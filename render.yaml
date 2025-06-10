@@ -14,26 +14,6 @@ services:
         value: production
       - key: DATABASE_CLIENT
         value: postgres
-      - key: DATABASE_HOST
-        fromDatabase:
-          name: rubikamp-db
-          property: host
-      - key: DATABASE_PORT
-        fromDatabase:
-          name: rubikamp-db
-          property: port
-      - key: DATABASE_NAME
-        fromDatabase:
-          name: rubikamp-db
-          property: database
-      - key: DATABASE_USERNAME
-        fromDatabase:
-          name: rubikamp-db
-          property: user
-      - key: DATABASE_PASSWORD
-        fromDatabase:
-          name: rubikamp-db
-          property: password
       - key: JWT_SECRET
         generateValue: true
       - key: ADMIN_JWT_SECRET
