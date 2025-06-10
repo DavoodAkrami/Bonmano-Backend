@@ -4,6 +4,11 @@ services:
     env: node
     buildCommand: npm install && npm run build
     startCommand: npm start
+    autoDeploy: true
+    deployHooks:
+      - name: deploy
+        type: webhook
+    healthCheckPath: /_health
     envVars:
       - key: NODE_ENV
         value: production
@@ -34,6 +39,8 @@ services:
       - key: ADMIN_JWT_SECRET
         generateValue: true
       - key: API_TOKEN_SALT
+        generateValue: true
+      - key: APP_KEYS
         generateValue: true
 
 databases:
