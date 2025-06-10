@@ -1,0 +1,80 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "product"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "englishName": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "persianName": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "category": {
+      "type": "string",
+      "required": true
+    },
+    "sku": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "spices": {
+      "type": "string",
+      "required": true
+    },
+    "caffeineContent": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "زیاد",
+        "متوسط",
+        "کم"
+      ]
+    },
+    "origin": {
+      "type": "string",
+      "required": true
+    },
+    "ingredients": {
+      "type": "blocks",
+      "required": true
+    },
+    "price": {
+      "type": "decimal",
+      "required": true,
+      "min": 0
+    },
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "stock": {
+      "type": "integer",
+      "required": true,
+      "min": 0
+    },
+    "stars": {
+      "type": "decimal",
+      "required": true,
+      "min": 0,
+      "max": 5
+    }
+  }
+}
